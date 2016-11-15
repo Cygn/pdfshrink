@@ -7,9 +7,8 @@ Four different levels are available, which will mainly affect the dpi of include
 
 * screen 72 dpi
 * ebook 150 dpi
-* priter: 300 dpi
-* prepress 300 dpi + better colors
+* printer: 300 dpi
+* prepress 300 dpi + colors
 
-the default is screen (worst quality, best reduction)
-
-if outfile is not specified, it will be infile.shrink.pdf. 
+The default is screen (worst quality, best reduction). if outfile is not specified, it will be infile.shrink.pdf. 
+It doesn't give smaller files in every case, but often does. 
