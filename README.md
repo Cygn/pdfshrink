@@ -1,15 +1,13 @@
 # pdfshrink
 
-Usage: pdfshrink [-sepP | --screen --ebook --printer --prepress] infile [outfile]
+Usage: *pdfshrink [-sepP | --screen --ebook --printer --prepress] infile [outfile]*
 
-A bash script to reduce the size of a pdf file, by optimizations offered by ghostscript. 
+A simple bash script to reduce the size of a pdf file, by optimizations offered by ghostscript. 
 Four different levels are available, which will mainly affect the dpi of included images:
 
-*screen 72 dpi
-*ebook 150 dpi
-*priter: 300 dpi
-*prepress 300 dpi + better colors
+* screen 72 dpi
+* ebook 150 dpi
+* printer: 300 dpi
+* prepress 300 dpi + colors
 
-the default is screen (worst quality, best reduction)
-
-if outfile is not specified, it will be infile.shrink.pdf. 
+It doesn't give smaller files in every case, but often does. If the same image is used several times in the original file the reduction can be quite substantial. The default is *screen* (worst quality, best reduction). Metadata is kept and it produces a PDF1.4 compatible file. If *outfile* is not specified, it will be *infile.shrink.pdf*. 
