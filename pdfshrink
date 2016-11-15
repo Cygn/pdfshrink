@@ -1,16 +1,7 @@
 #!/bin/bash
 # Script to reduce the size of pdfs
-# pdfshrink in out
+# pdfshrink [target] in out
 # if no out file is specified, a new file is created with the input filename.shrink.pdf
-doprinter(){
-gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -sOutputFile="$out" "$filename.$extension"
-}
-doprepress(){
-gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -sOutputFile="$out" "$filename.$extension"
-}
-doscreen(){
-gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile="$out" "$filename.$extension"
-}
 
 SHORT=psePh
 LONG=printer,screen,prepress,ebook
@@ -18,9 +9,9 @@ LONG=printer,screen,prepress,ebook
 PARSED=`getopt --options $SHORT --longoptions $LONG --name "$0" -- "$@"`
 eval set -- "$PARSED"
 
+type=screen # default target
 
-type=screen
- while true; do
+while true; do
     case "$1" in
         -p|--printer)
             type=printer
@@ -43,13 +34,12 @@ type=screen
             break
             ;;
         -h|--help)
-            echo "Usage: pdfshrink [-spP | --screen  --printer --prepress] infile [outfile]"
+            echo "Usage: pdfshrink [-sepP | --screen  --ebook --printer --prepress] infile [outfile]"
             shift
             exit
             ;;
         *)
-            type=screen
-            shift
+            break
             ;;
     esac
 done
@@ -60,7 +50,6 @@ if [ -z "$2" ]
   extension="${filename##*.}"
   filename="${filename%.*}"
   out=$filename.shrink.$extension
-  echo "$1 to $out"
 else
   out=$2
   
