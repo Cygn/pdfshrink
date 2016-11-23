@@ -56,6 +56,10 @@ else
 fi
 
 gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/$type -sOutputFile="$out" "$1"
+sleep 1
+original_size=`du -h $1`
+new_size=`du -h $out`
+echo -e "Shrink from \n `du -h $1` \n to \n `du -h $out`"
 
 
 
