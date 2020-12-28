@@ -9,6 +9,8 @@ License:        GPL
 URL:            https://github.com/cygn/pdfshrink.git
 Source0:        pdfshrink-1.0.tar.gz
 
+Requires: 	gs
+
 %description
 A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. Four different levels are available, 
 which will mainly affect the dpi of included images.
