@@ -1,5 +1,9 @@
 # pdfshrink
 
+Available as __rpm__ at [https://copr.fedorainfracloud.org/coprs/cygn/pdfshrink/](https://copr.fedorainfracloud.org/coprs/cygn/pdfshrink/)
+
+------------------------------
+
 Usage: *pdfshrink [-sepP | --screen --ebook --printer --prepress] infile [outfile]*
 
 A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. 
