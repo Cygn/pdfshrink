@@ -1,19 +1,33 @@
 Name:           pdfshrink
-Version:        1
-Release:        0
+Version:        1.0
+Release:        1
 Summary:        A script to compress the size of pdf files
 
 Group:          script
 BuildArch:      noarch
-License:        GPL
+License:        GPLv3
 URL:            https://github.com/cygn/pdfshrink.git
 Source0:        pdfshrink-1.0.tar.gz
+Vendor:         Sinan H <sinan@haliyo.net>
+Packager:       Sinan H <sinan@haliyo.net>
 
-Requires: 	gs
+Requires: 	    gs
+
+Summary:        A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. Four different levels are available, which will mainly affect the dpi of included images.
 
 %description
-A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. Four different levels are available, 
-which will mainly affect the dpi of included images.
+A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. Four different levels are available, which will mainly affect the dpi of included images.
+It doesn't give smaller files in every case, but often does, **even when there are no images nor graphics**. If an image appears several times in the original file the reduction can be quite substantial. The default is *screen* (worst quality, best reduction). 
+Metadata is kept and it produces a PDF1.4 compatible file. If *outfile* is not specified, it will be *infile.shrink.pdf*. 
+
+Usage: *pdfshrink [-sepP | --screen --ebook --printer --prepress] infile [outfile]*
+
+- screen 72 dpi
+- ebook 150 dpi
+- printer: 300 dpi
+- prepress 300 dpi + colors
+
+
 
 %prep
 %setup -q
