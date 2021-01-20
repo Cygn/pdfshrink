@@ -33,6 +33,7 @@ Usage: *pdfshrink [-sepP | --screen --ebook --printer --prepress] infile [outfil
 %setup -q
 %build
 %install
+install -m 0755 -d $RPM_BUILD_ROOT/usr/bin/
 install -m 0755 pdfshrink $RPM_BUILD_ROOT/usr/bin/pdfshrink
 
 %files
