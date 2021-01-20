@@ -19,11 +19,12 @@ which will mainly affect the dpi of included images.
 %setup -q
 %build
 %install
-install -m 0755 -d $RPM_BUILD_ROOT/usr/bin/
 install -m 0755 pdfshrink $RPM_BUILD_ROOT/usr/bin/pdfshrink
 
 %files
 /usr/bin/pdfshrink
+%doc README.md
+%license LICENSE
 
 %changelog
 * Sat Dec 26 2020 Sinan H  1.0.0
