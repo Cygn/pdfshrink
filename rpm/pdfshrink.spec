@@ -1,6 +1,6 @@
 Name:           pdfshrink
 Version:        1.0
-Release:        1
+Release:        2
 Summary:        A script to compress the size of pdf files
 
 Group:          script
