@@ -11,7 +11,7 @@ Source0:        pdfshrink-1.0.tar.gz
 Vendor:         Sinan H <sinan@haliyo.net>
 Packager:       Sinan H <sinan@haliyo.net>
 
-Requires: 	    gs
+Requires: 	    ghostscript
 
 Summary:        A simple script to reduce the size of a pdf file, by optimizations offered by ghostscript. Four different levels are available, which will mainly affect the dpi of included images.
 
